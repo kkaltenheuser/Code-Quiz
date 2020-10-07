@@ -3,17 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEB API QUIZ</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- place boostrap elements here for aesthetics-->
+    <title>JS Code Quiz</title>
   </head>
   <body>
-    <h1>Welcome to the quiz</h1>
-    <!-- where the user enters their answer -->
-    <p class="user-answer">You chose <span id="user-pick"> an answer </span></p>
-    <!-- how to enter the real answer-->
-    <p class="computer-answer">
-      The lucky answer is <span id="computer-pick"> real answer </span>
-    </p>
+    <div class="container">
+      <!-- container to hold all of the aspects of the code -->
+      <div id="startpage">
+        <!-- explaining to the user why there are here and the purpose of what they are doing-->
+        <h2>This quiz will test your knowledge</h2>
+        <h2>of various coding and syntax in Javascript</h2>
+        <!-- user initiates quiz and engages in gamification of knowledge-->
+        <button id="startbtn">Begin Quiz</button>
+        <!-- allows users to see what they are competing against in relationship to past scores-->
+        <button id="startPageHighscore" onclick="showHighscore()">
+          High Scores
+        </button>
+      </div>
+
+      <div id="quiz">
+        <!-- placing the timer need the question+potential solutions allows for the gamification to feel more intense and therefore the user will continue to return to try to beat their high score which is stored later in the code-->
+        <div id="timer">Time left:</div>
+        <div id="questions"><p>Questions Placeholder</p></div>
+        <button id="a" onclick="checkAnswer('a')">A</button>
+        <button id="b" onclick="checkAnswer('b')">B</button>
+        <button id="c" onclick="checkAnswer('c')">C</button>
+        <button id="d" onclick="checkAnswer('d')">D</button>
+        <!-- checking answers against eachother in relationship to the quiz and provided answers by the creator and that which was inputted by the user-->
+        <div id="result"></div>
+      </div>
+      <div id="gameover">
+        <div id="finalScore"></div>
+        <!-- this element breaks down a simple way to create a leaderboard like experience without knowing what everyone else's scroes have been like, it all provides anonymity for the user-->
+        <input
+          type="text"
+          size="35"
+          placeholder="Type your initials to enter high score"
+          name="intials"
+          id="initials"
+        />
+        <!-- submitting the score and seeing how it stacks up against previous user input allows for the continual engagement via the gamification of the quiz-->
+        <button id="submitScore">Submit Score</button>
+      </div>
+      <div id="highscoreContainer">
+        <div id="high-scorePage">
+          <div id="highscore-header">
+            <h3>User Initials</h3>
+            <h3>Score</h3>
+          </div>
+          <div id="highscore-initials"></div>
+          <div id="highscore-score"></div>
+        </div>
+        <!-- by knowing how you stack up and the placement of the "Play Again" button encourages gamification and to continue engaging in the cycle of playing to see how quickly they can compete but consistentcy in aswers comparatively to themselves or other potential future users-->
+        <div id="endGameBtns">
+          <button id="playAgain" onclick="replayQuiz()">Play Again</button>
+          <button id="clearHighscore" onclick="clearScore()">
+            Clear Highscores
+            <!-- clearing the highschores allows for multiple players to compete against themselves but not outrightly against other community members-->
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- javascript link has to be placed down here to allow everything to purposefully load, bootstrap JS can go in the header since it is a part of the aesthetics that can be loaded alongside CSS -->
     <script src="script.js"></script>
   </body>
 </html>
