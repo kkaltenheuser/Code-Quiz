@@ -50,11 +50,11 @@ var quizQuestions = [
   },
   {
     // question four
-    question: "What is the correct syntax when referencing an outside file named "whipple.js" ?",
-    choiceA: "<script src=”whipple.js”>",
-    choiceB: "<script href=”whipple.js”>",
-    choiceC: "<script ref=”whipple.js">",
-    choiceD: "<script name=”whipple.js”>",
+    question: "Which of the following is not a unit of data?",
+    choiceA: "python",
+    choiceB: "boolean",
+    choiceC: "string",
+    choiceD: "numbers",
     correctAnswer: "a",
   },
   {
